@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <!-- background image added for deliverable 4 -->
+      <div class="col-md-12 jumbotron text-center text-info" style="background-image: url(images/bacteria.jpg); background-size: 100%;">
+        <!-- inline styling of font colors added for deliverable 4 -->
+        <h1 style="color: orange">Belly Button Biodiversity Dashboard</h1>
+        <p style="color: orange">Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <!-- added a paragraph the describes what this page does for deliverable 4 -->
+    <div class="row">
+      <div class="col-md-12">
+        <p>This project identifies the top 10 bacterial species in each volunteer's belly button. 
+          The dropdown button allows the user to choose which volunteer is viewed.
+          The "Demographic Info" section provides personal information about the volunteer,
+          whereas the bar chart shows the top 10 bacterial species and the quantity of those bacterial species for the volunteer. 
+          The gauge chart shows how frequently the volunteer scrubs the belly button per week, whereas the bubble chart shows the bacteria culture per sample.
+        </p><br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <!-- bd-info class added for deliverable 4 -->
+          <div id="sample-metadata" class="panel-body bg-info"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="static/charts.js"></script>
+
+</body>
+
+</html>
